@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once '../conexaoUPA.php'; // Inclui a conexão com o banco
+    include_once '../application/conexaoUPA.php'; // Inclui a conexão com o banco
     
     // Configura o cabeçalho da resposta
     header('Content-Type: application/json');
@@ -8,6 +8,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $data = json_decode(file_get_contents('php://input'), true);
         //var_dump($data); // Verifica o JSON recebido
+        //https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
     
         $matricula = $data['matricula'] ?? '';
         $senha = $data['senha'] ?? '';

@@ -1,4 +1,3 @@
-//Login - Autenticação de usuários
 document.addEventListener('DOMContentLoaded', function() {
     console.log('JavaScript carregado');
 
@@ -17,7 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
             email: document.getElementById("email").value
         };
 
-        fetch("http://localhost/upa_web_project-main/projeto_upa_ultima_versao/Projeto-UPA/api/cadastro.php", {
+         //{
+         //   "matricula": "2019008422",
+         //   "senha": "Admin123",
+        //    "senhac": "Admin123",
+        //    "contato": "93992295832",
+        //    "email": "admin@admin.com"
+         // }
+          
+
+        fetch("http://localhost/upa_web_project-main/upa_web_project/application/api/cadastro.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

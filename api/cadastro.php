@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once "../conexaoUPA.php";
+    include_once "../application/conexaoUPA.php";
 
     header("Content-Type: application/json");  
 
