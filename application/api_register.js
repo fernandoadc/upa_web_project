@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
          // }
           
 
-        fetch("http://localhost/upa_web_project-main/upa_web_project/application/api/cadastro.php", {
+        fetch("http://localhost/upa_web_project/api/register.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

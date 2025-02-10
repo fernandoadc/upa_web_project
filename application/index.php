@@ -83,7 +83,7 @@
 <script src="_admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="_admin/plugins/iCheck/icheck.min.js"></script>
-<script src="api.js"></script>
+<script src="api_auth.js"></script>
 <script>
   $(function () {
     $('input').iCheck({

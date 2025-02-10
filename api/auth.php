@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once '../application/conexaoUPA.php'; // Inclui a conexão com o banco
+    include_once '../application/database.php'; // Inclui a conexão com o banco
     
     // Configura o cabeçalho da resposta
     header('Content-Type: application/json');

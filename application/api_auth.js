@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             senha: senha
         };
 
-        fetch('http://localhost/upa_web_project-main/upa_web_project/application/api/auth.php', {
+        fetch('http://localhost/upa_web_project/api/auth.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

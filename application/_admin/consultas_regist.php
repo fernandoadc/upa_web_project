@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include_once "../conexaoUPA.php";
+  include_once "../database.php";
   if(!empty($_SESSION['login'])){
     $dados = mysqli_query($dbcon, "SELECT nome FROM usuario WHERE matricula = $_SESSION[login]");
     $dadosbd = mysqli_fetch_assoc($dados);
@@ -133,7 +133,7 @@
                   <th>Descrição do pedido médico</th>
                 </tr>
                 <?php                  
-                   $conexao = mysqli_connect("localhost", "root", "", "upa");
+                   $conexao = mysqli_connect("localhost", "phpmyadmin", "390.Pico", "db_upa");
                    $dados = mysqli_query($conexao, "SELECT * FROM consulta ORDER BY data DESC LIMIT 0, 15");
                 
                    while($consulta = mysqli_fetch_array($dados)){

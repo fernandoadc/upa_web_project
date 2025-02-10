@@ -74,7 +74,7 @@ $banco = "db_upa";
 
 ### Rodar o Sistema
 Após configurar tudo, abra um navegador e acesse:  
-[http://localhost/upa_web_project/](http://localhost/upa_web_project/)
+[http://localhost/upa_web_project/application](http://localhost/upa_web_project/application)
 
 ### Credenciais de Login
 Você pode criar um novo usuário diretamente no sistema.  
