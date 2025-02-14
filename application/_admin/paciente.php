@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include_once "../conexaoUPA.php";
+  include_once "../database.php";
   if(!empty($_SESSION['login'])){
     $dados = mysqli_query($dbcon, "SELECT nome FROM usuario WHERE matricula = $_SESSION[login]");
     $dadosbd = mysqli_fetch_assoc($dados);
@@ -115,7 +115,7 @@
                unset ($_SESSION['msgcad']);
              }
         ?>
-        <form method="post" action="pacientebd.php">
+        <form id="paciente-form" method="post"><!--action="pacientebd.php"-->
         <div class="box-body">
           <div class="row">
             <div class="col-md-6">
@@ -125,15 +125,15 @@
                 </div>
                 <div class="form-group">
                   <label for="end">Endereço</label>
-                  <input type="text" name="endereco" class="form-control" id="end" placeholder="rua, av, trav,...">
+                  <input type="text" name="endereco" id="endereco" class="form-control" placeholder="rua, av, trav,...">
                 </div>
                 <div class="form-group">
                   <label for="num">Número</label>
-                  <input type="number" name="numero" class="form-control" id="num" placeholder="Número">
+                  <input type="number" name="numero" id="numero" class="form-control" placeholder="Número">
                 </div>
                 <div class="form-group">
                   <label>Bairro</label>
-                  <select name="bairro" class="form-control">
+                  <select name="bairro" id="bairro" class="form-control">
                      <optgroup label="A">
                         <option>Aparecida</option>
                         <option>Aldeia</option>
@@ -180,25 +180,25 @@
                 </div>
                 <div class="form-group">
                   <label for="cid">Cidade</label>
-                  <input type="text" name="cidade" class="form-control" id="cid" placeholder="Sua Cidade" value="SANTARÉM">
+                  <input type="text" name="cidade" id="cidade" class="form-control" placeholder="Sua Cidade" value="SANTARÉM">
                 </div>
                 <div class="form-group">
                   <label for="est">Estado</label>
-                  <input type="text" name="estado" class="form-control" id="est" placeholder="Seu Estado" value="PARÁ">
+                  <input type="text" name="estado" id="estado" class="form-control" placeholder="Seu Estado" value="PARÁ">
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                   <label for="nasc">Nascimento</label>
-                  <input type="date" name="nasc" class="form-control" id="nasc">
-                </div>
+                  <input type="date" name="nasc"  id="nascimento" class="form-control">
+                </div>-->
                </div>
                <div class="col-md-6">
                 <div class="form-group">
                   <label for="idade">Idade</label>
-                  <input type="number" name="idade" class="form-control" id="idade" placeholder=" idade do paciente">
+                  <input type="number" name="idade" id="idade" class="form-control" placeholder="idade do paciente">
                 </div>
                 <div class="form-group">
                   <label for="rg">RG</label>
-                  <input type="number" name="rg" class="form-control" id="rg">
+                  <input type="text" name="rg" id="rg" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="sus">Cartão SUS</label>
@@ -206,21 +206,20 @@
                 </div>
                 <div class="form-group">
                   <label for="fone">Contato</label>
-                  <input type="tel" name="cont" id="fone" class="form-control" placeholder="Telefone">
+                  <input type="tel" name="cont" id="cont" class="form-control" placeholder="Telefone">
                 </div>
                 <div class="form-group">
                   <label for="mae">Mãe</label>
                   <input type="text" name="mae" class="form-control" id="mae" placeholder="Nome da Mãe">
                 </div>
     
-                <div class="form-group" style="margin-left: 11px;">
-                 <label>Sexo</label>
-                 <div class="box box-primary" style="width: 167px;">
-                  <div class="form-group" style="margin-left: 28px;">
-                     <input type="radio" name="sexo" value="M" id="masc"><label for="masc">Masculino</label><br>
-                     <input type="radio" name="sexo" value="F" id="fem"><label for="fem">Feminino</label>
-                  </div>
-                 </div>
+                <div class="form-group">
+                  <label>Sexo</label>
+                  <select name="sexo" id="sexo" class="form-control">
+                    <option value="">Selecione</option>  <!-- Opcional -->
+                    <option value="F">Feminino</option>
+                    <option value="M">Masculino</option>
+                  </select>
                 </div>
                 
               <div class="box-footer">
@@ -238,7 +237,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2024 <a href="https://adminlte.io">Universidade Federal do Oeste do Pará</a>.</strong>
+    <strong>Copyright &copy; 2025 <a href="https://adminlte.io">Universidade Federal do Oeste do Pará</a>.</strong>
   </footer>
   <div class="control-sidebar-bg"></div>
 </div>
@@ -249,5 +248,6 @@
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
 <script src="dist/js/demo.js"></script>
+<script src="paciente_register_api.js"></script>
 </body>
 </html>

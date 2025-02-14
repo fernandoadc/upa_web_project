@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include_once "../conexaoUPA.php";
+  include_once "../database.php";
   if(!empty($_SESSION['login'])){
     $dados = mysqli_query($dbcon, "SELECT nome FROM usuario WHERE matricula = $_SESSION[login]");
     $dadosbd = mysqli_fetch_assoc($dados);
@@ -11,7 +11,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | General Form Elements</title>
+  <title>SIUPA | Sistema Informatizado</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
@@ -115,7 +115,7 @@
                unset ($_SESSION['msgcad']);
              }
         ?>
-        <form method="post" action="medicobd.php">
+        <form id="medico-form" method="post"><!--action="medicobd.php"-->
         <div class="box-body">
           <div class="row">
             <div class="col-md-6">
@@ -133,7 +133,7 @@
                 </div>
                 <div class="form-group">
                   <label>Bairro</label>
-                  <select name="bairro" class="form-control">
+                  <select name="bairro" id="bairro" class="form-control">
                      <optgroup label="A">
                         <option>Aparecida</option>
                         <option>Aldeia</option>
@@ -182,7 +182,7 @@
                   <label for="cid">Cidade</label>
                   <input type="text" name="cidade" class="form-control" id="cidade" placeholder="Sua Cidade" value="SANTARÉM">
                 </div>
-			</div>	
+			  </div>	
 		    <div class="col-md-6">	
                 <div class="form-group">
                   <label for="est">Estado</label>
@@ -201,14 +201,31 @@
                   <input type="text" name="espe" class="form-control" id="espe" placeholder="Especialidade">
                 </div>
     
-                <div class="form-group" style="margin-left: 11px;">
+                <!--<div class="form-group" style="margin-left: 11px;">
                  <label>Sexo</label>
                  <div class="box box-primary" style="width: 167px;">
                   <div class="form-group" style="margin-left: 28px;">
-                     <input type="radio" name="sexo" value="M" id="masc"><label for="masc">Masculino</label><br>
-                     <input type="radio" name="sexo" value="F" id="fem"><label for="fem">Feminino</label>
+                      <input type="radio" name="sexo" value="M" id="masc">
+                      <label for="masc">Masculino</label><br>
+
+                      <input type="radio" name="sexo" value="F" id="fem">
+                      <label for="fem">Feminino</label>
                   </div>
                  </div>
+                </div>-->
+
+
+
+                <div class="form-group">
+                  <label>Sexo</label>
+                  <select name="sexo" id="sexo" class="form-control">
+                     <optgroup>
+                        <option>Feminino</option>
+                     </optgroup>
+                     <optgroup>
+                        <option>Masculino</option>
+                     </optgroup>
+                  </select>
                 </div>
                 
               <div class="box-footer">
@@ -226,7 +243,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2024 <a href="https://adminlte.io">Universidade Federal do Oeste do Pará</a>.</strong>
+    <strong>Copyright &copy; 2025 <a href="https://adminlte.io">Universidade Federal do Oeste do Pará</a>.</strong>
   </footer>
   <div class="control-sidebar-bg"></div>
 </div>
@@ -237,5 +254,6 @@
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
 <script src="dist/js/demo.js"></script>
+<script src="medico_register_api.js"></script>
 </body>
 </html>

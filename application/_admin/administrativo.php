@@ -176,7 +176,7 @@ include_once "../database.php";
     <div class='pull-right hidden-xs'>
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2024 <a href='https://adminlte.io'>Universidade Federal do Oeste do Pará</a>.</strong>
+    <strong>Copyright &copy; 2025 <a href='https://adminlte.io'>Universidade Federal do Oeste do Pará</a>.</strong>
   </footer>
 
   <div class='control-sidebar-bg'></div>

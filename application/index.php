@@ -70,7 +70,7 @@
     <!-- /.social-auth-links -->
     <div style="text-align: center;">
        <!--<a href="#">Esqueci a senha</a><br>-->
-       <a href="cadastro.php" class="text-center"><span class="fa fa-user" style="margin-right: 3px;"></span>Cadastre-se</a>
+       <a href="register.php" class="text-center"><span class="fa fa-user" style="margin-right: 3px;"></span>Cadastre-se</a>
     </div>
   </div>
   <!-- /.login-box-body -->

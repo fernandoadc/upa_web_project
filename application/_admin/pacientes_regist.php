@@ -32,7 +32,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="administrativo.php" class="logo">
       <span class="logo-mini"><b>S</b>UPA</span>
       <span class="logo-lg"><b>Santarém</b>UPA</span>
     </a>

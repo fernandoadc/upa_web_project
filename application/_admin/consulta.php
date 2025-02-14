@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include_once "../conexaoUPA.php";
+  include_once "../database.php";
   if(!empty($_SESSION['login'])){
     $dados = mysqli_query($dbcon, "SELECT nome FROM usuario WHERE matricula = $_SESSION[login]");
     $dadosbd = mysqli_fetch_assoc($dados);
