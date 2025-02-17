@@ -13,13 +13,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bairro = mysqli_real_escape_string($dbcon, $data['bairro'] ?? null);
     $cidade = mysqli_real_escape_string($dbcon, $data['cidade'] ?? null);
     $estado = mysqli_real_escape_string($dbcon, $data['estado'] ?? null);
-    #$nascimento = mysqli_real_escape_string($dbcon, $data['nascimento'] ?? null);
     $idade = mysqli_real_escape_string($dbcon, $data['idade'] ?? null);
     $rg = mysqli_real_escape_string($dbcon, $data['rg'] ?? null);
     $sus = mysqli_real_escape_string($dbcon, $data['sus'] ?? null);
     $contato = mysqli_real_escape_string($dbcon, $data['cont'] ?? null);
     $mae = mysqli_real_escape_string($dbcon, $data['mae'] ?? null);
-    #$sexo = mysqli_real_escape_string($dbcon, $data['sexo'] ?? null);
+    $sexo = mysqli_real_escape_string($dbcon, $data['sexo'] ?? null);
 
     // Verificando se os campos obrigatórios estão preenchidos
     if (empty($nome) || empty($cidade) || empty($endereco) || empty($mae) || empty($bairro) || empty($numero) || empty($idade) || empty($rg) || empty($sus) || empty($contato)) {
@@ -45,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             // Inserindo o paciente
-            $sqldb = $dbcon->query("INSERT INTO paciente(cartao_sus, nome, idade, rg, contato, mae, endereco_cod_endereco) 
-                                    VALUES('$sus', '$nome', '$idade', '$rg', '$contato', '$mae', '$endereco_id')");
+            $sqldb = $dbcon->query("INSERT INTO paciente(cartao_sus, nome, idade, sexo, rg, contato, mae, endereco_cod_endereco) 
+                                    VALUES('$sus', '$nome', '$idade', '$sexo', '$rg', '$contato', '$mae', '$endereco_id')");
             
             if ($sqldb) {
                 echo json_encode(["success" => true, "message" => "Cadastro efetuado com sucesso!"]);
@@ -59,8 +58,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-
-
-
-<!--dando erro no sexo-->

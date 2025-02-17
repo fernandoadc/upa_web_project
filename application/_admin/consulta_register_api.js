@@ -1,27 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('JavaScript carregado');
-
-
+  
+  
     //Cadastro
-    document.getElementById('paciente-form').addEventListener('submit', function(event) {
+    document.getElementById('consulta-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Impede o envio tradicional do formulário
         console.log('Formulário enviado');
         
         const data = {
             nome: document.getElementById("nome").value,
-            endereco: document.getElementById("endereco").value,
-            numero: document.getElementById("numero").value,
-            bairro: document.getElementById("bairro").value,
-            cidade: document.getElementById("cidade").value,
-            estado: document.getElementById("estado").value,
-            idade: document.getElementById("idade").value,
-            rg: document.getElementById("rg").value,
             sus: document.getElementById("sus").value,
-            cont: document.getElementById("cont").value,
-            mae: document.getElementById("mae").value,
-            sexo: document.getElementById("sexo").value
+            desc: document.getElementById("desc").value,
+            medico: document.getElementById("medico").value, // ID duplicado, precisa corrigir!
+            crm: document.getElementById("crm").value,
+            data: document.getElementById("datepicker").value
         };
-
+  
          //{
          //   "matricula": "2019008422",
          //   "senha": "Admin123",
@@ -30,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         //    "email": "admin@admin.com"
          // }
           
-
-        fetch("http://localhost/upa_web_project/api/paciente_register.php", {
+  
+        fetch("http://localhost/upa_web_project/api/consulta_register.php", { 
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -41,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert("Paciente cadastrado com sucesso!");
-                window.location.href = "paciente.php";  // Limpa os campos do formulário
+                alert("Consulta cadastrada com sucesso!");
+                window.location.href = "consulta.php";  // Limpa os campos do formulário
             } else {
                 alert("Erro: " + data.message);
             }
         })
     });
-});
+  });

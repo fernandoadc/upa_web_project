@@ -126,7 +126,7 @@
             </div>            
             <div class="box-body">
               <?php
-                $conexao = mysqli_connect("localhost", "phpmyadmin", "390.Pico", "db_upa");
+                $conexao = mysqli_connect("localhost", "root", "", "db_upa");
                 $dados = mysqli_query($conexao, "SELECT * FROM medico ORDER BY nome LIMIT 0, 6");
                 
                 while($produto = mysqli_fetch_array($dados)){
@@ -162,7 +162,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2024 <a href="https://adminlte.io">Universidade Federal do Oeste do Pará</a>.</strong>
+    <strong>Copyright &copy; 2025 <a href="https://adminlte.io">Universidade Federal do Oeste do Pará</a>.</strong>
   </footer>
   
   <div class="control-sidebar-bg"></div>

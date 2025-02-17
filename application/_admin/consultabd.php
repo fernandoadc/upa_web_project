@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once "../conexaoUPA.php";
+    include_once "../database.php";
 	require 'PHPMailerAutoload.php';
 	// No início do seu arquivo consultabd.php
 	//include_once "mail.php";

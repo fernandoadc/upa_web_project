@@ -1,7 +1,7 @@
 <?php
 	$host = "localhost";
-	$usuario = "phpmyadmin";
-	$senha = "390.Pico";	
+	$usuario = "root"; #phpmyadmin
+	$senha = "";#390.Pico	
 	$banco = "db_upa";
 
 	try {

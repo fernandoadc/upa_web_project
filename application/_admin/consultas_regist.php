@@ -133,7 +133,7 @@
                   <th>Descrição do pedido médico</th>
                 </tr>
                 <?php                  
-                   $conexao = mysqli_connect("localhost", "phpmyadmin", "390.Pico", "db_upa");
+                   $conexao = mysqli_connect("localhost", "root", "", "db_upa");
                    $dados = mysqli_query($conexao, "SELECT * FROM consulta ORDER BY data DESC LIMIT 0, 15");
                 
                    while($consulta = mysqli_fetch_array($dados)){

@@ -117,7 +117,7 @@
                  unset ($_SESSION['msgcad']);
                }
             ?>
-            <form method="post" action="consultabd.php">
+            <form id="consulta-form" method="post">
               <div class="box-body">
                   <div style="text-align: center; margin-bottom: 10px;" class="box-header with-border ">
                     <h3 class="box-title">Dados Pessoais/Procedimentos</h3>
@@ -136,12 +136,12 @@
                 
                 <div class="form-group">
                   <label for="nasc">Cartão SUS</label>
-                  <input type="number" name="sus" class="form-control" id="nasc">
+                  <input type="number" name="sus" class="form-control" id="sus">
                 </div>
                 
                 <div class="form-group">
                   <label>Pedido Médico</label>
-                  <textarea class="form-control" name="desc" rows="3" placeholder="Descreva aqui a queixa do paciente..."></textarea>
+                  <textarea class="form-control" name="desc" id="desc" rows="3" placeholder="Descreva aqui a queixa do paciente..."></textarea>
                 </div>
                 
                 <div class="form-group">
@@ -151,7 +151,7 @@
                     <div class="input-group-addon">
                       <i class="fa fa-user-md"></i>
                     </div>
-                    <input type="text" name="medico" class="form-control pull-right" id="datepicker">
+                    <input type="text" name="medico" class="form-control pull-right" id="medico">
                   </div>
                 </div>
                 
@@ -167,7 +167,7 @@
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="date" name="data" class="form-control pull-right" id="datepicker">
+                    <input type="text" name="data" class="form-control pull-right" id="datepicker">
                   </div>
                 </div>
                 
@@ -192,7 +192,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2024 <a href="https://adminlte.io">Universidade Federal do Oeste do Pará</a>.</strong>
+    <strong>Copyright &copy; 2025 <a href="https://adminlte.io">Universidade Federal do Oeste do Pará</a>.</strong>
   </footer>
   <div class="control-sidebar-bg"></div>
 </div>
@@ -208,5 +208,6 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="consulta_register_api.js"></script>
 </body>
 </html>
