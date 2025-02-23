@@ -24,6 +24,8 @@
 Este projeto é um sistema web desenvolvido para auxiliar na gestão e atendimento de uma Unidade de Pronto Atendimento (UPA). 
 Ele permite o gerenciamento de informações relacionadas a pacientes, consultas e registros médicos, facilitando o trabalho da equipe de saúde e otimizando o fluxo de atendimento.
 
+Link Tutorial: https://youtu.be/QcSHIp8NsoQ
+
 
 ## <a id="funcionalidades"></a> 📝 Funcionalidades
 
@@ -70,7 +72,6 @@ $usuario = "root";
 $senha = "";
 $banco = "db_upa";
 ```
-## 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
 
 ### Rodar o Sistema
 Após configurar tudo, abra um navegador e acesse:  
